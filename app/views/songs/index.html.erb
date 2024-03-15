@@ -1,0 +1,19 @@
+<h1>Songs</h1>
+
+
+<h1>All Songs</h1>
+
+<%= form_with(url: songs_path, method: "get") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search songs..." %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% @songs.each do |song| %>
+  <p><%= song.title %></p>
+<% end %>
+
+<ul>
+  <% @songs.each do |song| %>
+    <li><%= link_to song.title, song_path(song) %></li>
+  <% end %>
+</ul>

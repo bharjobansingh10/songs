@@ -1,0 +1,5 @@
+<h1><%= @song.title %></h1>
+<h2>Album: <%= @song.album.title %></h2>
+<h2>Artist: <%= @song.album.artist.name %></h2>
+<h2>Duration: <%= @song.duration %> seconds</h2>
+<%= link_to 'Back', songs_path %>

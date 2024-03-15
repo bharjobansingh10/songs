@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SongsApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <!-- Bootstrap CSS -->
+  <%= stylesheet_link_tag 'application', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <%= link_to 'SongsApp', root_path, class: 'navbar-brand' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to 'Home', root_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Artists', artists_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Albums', albums_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Songs', songs_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'About', about_path, class: 'nav-link' %>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <%= yield %>
+</div>
+
+<!-- Bootstrap JavaScript -->
+<%= javascript_include_tag 'application', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js', 'data-turbolinks-track': 'reload' %>
+</body>
+</html>
